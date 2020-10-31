@@ -12,8 +12,13 @@
 	<!-- Vendor Bundle CSS -->
 	<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=101">
 	<!-- Custom styles for this template -->
-	<link rel="stylesheet" href="assets/css/style.css?ver=101">
-	
+	<link rel="stylesheet" href="assets/css/style.css?ver=101">    
+      <!-- 1. Install Magic SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/magic-sdk/dist/magic.js"></script>
+    <script>
+      /* 2. Initialize Magic Instance */
+      const magic = new Magic("pk_test_02C094FF86DC35C4");
+    </script>
 </head>
 
 <body class="user-dashboard">
@@ -148,8 +153,15 @@
                         <h6 class="user-name">Mike Thomas</h6>
                         <div class="user-uid">Unique ID: <span>CWGS1105</span></div>
                         <ul class="btn-grp guttar-10px">
+<!--
                             <li><a href="#" class="btn btn-xs btn-warning">Confirm Email</a></li>
-                            <li><a href="kyc.html" class="btn btn-xs btn-warning">KYC Pending</a></li>
+                            <li><a href="kyc.html" class="btn btn-xs btn-warning">KYC Pending</a>
+-->
+                            <li>
+                            /* Get user metadata including email */
+                            const userMetadata = await magic.user.getMetadata();    
+                            <h1>Current user: ${userMetadata.email}</h1>    
+                            </li>    
                         </ul>
                     </div><!-- .user-box -->
                     <ul class="user-icon-nav">
@@ -190,10 +202,7 @@
                 <div class="user-content">
                     <div class="user-panel">
                         <h2 class="user-panel-title">Account Information</h2>
-                        <div class="alert-box alert-primary">
-                            <div class="alert-txt"><em class="ti ti-alert"></em>Confirm your email address</div>
-                            <a href="#" class="btn btn-sm btn-primary">Resend Email</a>
-                        </div><!-- .alert-box -->
+                        
                         <ul class="nav nav-tabs nav-tabs-line" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#personal-data">Personal Data</a>
