@@ -1,18 +1,4 @@
-/*!
-Template :	UserCenter - ICO Crypto
-Author	 :	Softnio
-Version	 :	1.0.1
-Updated	 :	10.26.2018
-*/
-/*!
- * Table of Contents
- * 01.0 - Fonts
- * 02.0 - Reset
- * 03.0 - Utility
- * 04.0 - Common
- * 05.0 - Elements
- */
-/*! 01.0 - FONTS */
+
 @font-face { font-family: 'Poppins'; src: url("../fonts/Poppins-Bold.eot"); src: local("Poppins Bold"), local("Poppins-Bold"), url("../fonts/Poppins-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff"), url("../fonts/Poppins-Bold.ttf") format("truetype"); font-weight: bold; font-style: normal; }
 @font-face { font-family: 'Poppins'; src: url("../fonts/Poppins-Light.eot"); src: local("Poppins Light"), local("Poppins-Light"), url("../fonts/Poppins-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Light.woff2") format("woff2"), url("../fonts/Poppins-Light.woff") format("woff"), url("../fonts/Poppins-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; }
 @font-face { font-family: 'Poppins'; src: url("../fonts/Poppins-SemiBold.eot"); src: local("Poppins SemiBold"), local("Poppins-SemiBold"), url("../fonts/Poppins-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-SemiBold.woff2") format("woff2"), url("../fonts/Poppins-SemiBold.woff") format("woff"), url("../fonts/Poppins-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; }

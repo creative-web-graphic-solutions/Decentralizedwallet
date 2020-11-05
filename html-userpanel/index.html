@@ -1,63 +1,332 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Softnio">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="ICO Crypto is a modern and elegant landing page, created for ICO Agencies and digital crypto currency investment website.">
+	<!-- Fav Icon  -->
+	<link rel="shortcut icon" href="images/favicon.png">
+	<!-- Site Title  -->
+	<title>Account | User Center - CryptoWallet</title>
+	<!-- Vendor Bundle CSS -->
+	<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=101">
+	<!-- Custom styles for this template -->
+    <link rel="stylesheet" href="assets/css/style.css?ver=101">    
+    <script src="tabcontent.js" type="text/javascript"></script>
+    <link href="tabcontent.css" rel="stylesheet" type="text/css" />
+    
+</head>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="custom.css">
-    <title>Our little escrow Dapp</title>
-  </head>
-  <body>
-    <h1>Welcome to escrow dapp.</h1>
+<body class="user-dashboard">
+    
+    
+    <div class="topbar">
+        <div class="topbar-md d-lg-none">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="toggle-nav">
+                        <div class="toggle-icon">
+                            <span class="toggle-line"></span>
+                            <span class="toggle-line"></span>
+                            <span class="toggle-line"></span>
+                            <span class="toggle-line"></span>
+                        </div>
+                    </a><!-- .toggle-nav -->
 
-    <h2>Send money through contract:</h2>
-    <form id="contract-form">
-      <div class="form-group">
-        <label for="Sender Address">Sender ETH Address</label>
-        <input value="" type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" placeholder="Enter your address" required="true">
-        <small id="fromAddressHelp" class="form-text text-muted">Enter your wallet address. Note: you will need to approve this with your private key.</small>
-      </div>
-        <div class="form-group">
-          <label for="Receiver Address">Receiver ETH Address</label>
-          <input value="0x2932b7A2355D6fecc4b5c0B6BD44cC31df247a2e" type="text" class="form-control" id="toAddress" aria-describedby="toAddressHelp" placeholder="Enter the receipient address" required="true">
-          <small id="toAddressHelp" class="form-text text-muted">Enter the wallet address of the recipient.</small>
-        </div>
-          <div class="form-group">
-            <label for="Amount">Amount</label>
-            <input value="2" type="text" class="form-control" id="amount" aria-describedby="amountHelp" placeholder="Amount to send in ETH" required="true">
-            <small id="amountHelp" class="form-text text-muted">How much you want to send in ETH.</small>
-          </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <div id="deposit-result">Click the Submit button to deposit your ETH to the contract.</div>
-    </form>
-    <hr>
-    <h2>Balance:</h2>
-    <form id="get-balance-form">
-      <button type="submit" class="btn btn-primary">Get Balance</button>
-      <div id="the-balance">Click Button to get the current contract balance.</div>
-    </form>
-    <h2>Approver:</h2>
-    <form id="approver-form">
-      <button type="submit" class="btn btn-primary">Get Approver</button>
-      <div id="approver-display">Click Button to get the address of the approver.</div>
-    </form>
+                    <div class="site-logo">
+                        <a href="index.html" class="site-brand">
+                            <img src="images/logo.jpg" alt="logo" srcset="images/logo2x.jpg 2x">
+                        </a>
+                    </div><!-- .site-logo -->
+                    
+                    <div class="dropdown topbar-action-item topbar-action-user">
+                        <a href="#" data-toggle="dropdown"> <img class="icon" src="images/user-thumb-sm.png" alt="thumb"> </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="user-dropdown">
+                                <div class="user-dropdown-head">
+                                    <h6 class="user-dropdown-name">Micheal Thomas <span>(CWGS1105)</span></h6>
+                                    <span class="user-dropdown-email">useremail@example.com</span>
+                                </div>
+                                <div class="user-dropdown-balance">
+                                    <h6> BALANCE</h6>
+                                    <h3>120,000,000 </h3>
+                                    <ul>
+                                        <li>1.240 BTC</li>
+                                        <li>19.043 ETH</li>
+                                        <li>6,500.13 USD</li>
+                                    </ul>
+                                </div>
+                                <ul class="user-dropdown-btns btn-grp guttar-10px">
+                                    <li><a href="#" class="btn btn-xs btn-warning">Confirm Email</a></li>
+                                    <li><a href="sendmoney.html" class="btn btn-xs btn-warning">Send Money</a></li>
+                                </ul>
+                                <div class="gaps-1x"></div>
+                                <ul class="user-dropdown-links">
+                                    <li><a href="account.html"><i class="ti ti-id-badge"></i>My Profile</a></li>
+                                    <li><a href="security.html"><i class="ti ti-lock"></i>Security</a></li>
+                                    <li><a href="activity.html"><i class="ti ti-eye"></i>Activity</a></li>
+                                </ul>
+                                <ul class="user-dropdown-links">
+                                    <li><a href="login.html"><i class="ti ti-power-off"></i>Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .toggle-action -->
+                </div><!-- .container -->
+            </div><!-- .container -->
+        </div><!-- .topbar-md -->
+        <div class="container">
+            <div class="d-lg-flex align-items-center justify-content-between">
+                <div class="topbar-lg d-none d-lg-block">
+                    <div class="site-logo">
+                        <a href="index.html" class="site-brand">
+                            <img src="images/logo.jpg" alt="logo" srcset="">
+                        </a>
+                    </div><!-- .site-logo -->
+                </div><!-- .topbar-lg -->
 
-    <form id="approve-form">
-      <button type="submit" class="btn btn-primary">Approve Transaction</button>
-      <div id="approval-display">Click the button to approve the transaction.</div>
-    </form>
+                <div class="topbar-action d-none d-lg-block">
+                    <ul class="topbar-action-list">
+                        <li class="topbar-action-item topbar-action-link">
+                            <a href="#"><em class="ti ti-home"></em> Go to main site</a>
+                        </li><!-- .topbar-action-item -->
 
+                        <li class="dropdown topbar-action-item topbar-action-language">
+                            <a href="#" data-toggle="dropdown"> EN <em class="ti ti-angle-down"></em> </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">FR</a></li>
+                                <li><a href="#">JY</a></li>
+                                <li><a href="#">CH</a></li>
+                            </ul>
+                        </li><!-- .topbar-action-item -->
 
-    <!-- Optional JavaScript -->
+                        <li class="dropdown topbar-action-item topbar-action-user">
+                            <a href="#" data-toggle="dropdown"> <img class="icon" src="images/user-thumb-sm.png" alt="thumb"> </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="user-dropdown">
+                                    <div class="user-dropdown-head">
+                                        <h6 class="user-dropdown-name">Mike Thomas <span>(CWGS1105)</span></h6>
+                                        <span class="user-dropdown-email">useremail@example.com</span>
+                                    </div>
+                                    <div class="user-dropdown-balance">
+                                        <h6> BALANCE</h6>
+                                        <h3>123,400,000 </h3>
+                                        <ul>
+                                            <li>1.460 BTC</li>
+                                            <li>12.013 ETH</li>
+                                            <li>2,700.13 USD</li>
+                                        </ul>
+                                    </div>
+                                    <ul class="user-dropdown-links">
+                                        <li><a href="account.html"><i class="ti ti-id-badge"></i>My Profile</a></li>
+                                        <li><a href="security.html"><i class="ti ti-lock"></i>Security</a></li>
+                                        <li><a href="activity.html"><i class="ti ti-eye"></i>Activity</a></li>
+                                    </ul>
+                                    <ul class="user-dropdown-links">
+                                        <li><a href="login.html"><i class="ti ti-power-off"></i>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li><!-- .topbar-action-item -->
+                    </ul><!-- .topbar-action-list -->
+                </div><!-- .topbar-action -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- TopBar End -->
+    
+    
+    <div class="user-wraper">
+        <div class="container">
+            <div class="d-flex">
+                <div class="user-sidebar">
+                    <div class="user-sidebar-overlay"></div>
+                    <div class="user-box d-none d-lg-block">
+                        <div class="user-image">
+                            <img src="images/user-thumb-lg.png" alt="thumb">
+                        </div>
+                        <h6 class="user-name">Mike Thomas</h6>
+                        <div class="user-uid">Unique ID: <span>CWGS1105</span></div>
+                        <ul class="btn-grp guttar-10px">
+<!--
+                            <li><a href="#" class="btn btn-xs btn-warning">Confirm Email</a></li>
+                            <li><a href="kyc.html" class="btn btn-xs btn-warning">KYC Pending</a>
+-->
+                            <li>
+                            /* Get user metadata including email */
+                            const userMetadata = await magic.user.getMetadata();    
+                            <h1>Current user: ${userMetadata.email}</h1>    
+                            </li>    
+                        </ul>
+                    </div><!-- .user-box -->
+                    <ul class="user-icon-nav">
+                        <li><a href="index.html"><em class="ti ti-dashboard"></em>Dashboard</a></li>
+                        <li><a href="sendmoney.html"><em class="ti ti-files"></em>Send Money</a></li>
+                        <li><a href="receivemoney.html"><em class="ti ti-pie-chart"></em>Receive Money</a></li>
+                        <li><a href="transactions.html"><em class="ti ti-control-shuffle"></em>Transactions History</a></li>
+                       
+                        <li><a href="account.html"><em class="ti ti-user"></em>Account</a></li>
+                        <li><a href="security.html"><em class="ti ti-lock"></em>Security</a></li>
+                    </ul><!-- .user-icon-nav -->
+                    <div class="user-sidebar-sap"></div><!-- .user-sidebar-sap -->
+                    <ul class="user-nav">
+                        <li><a href="how-to.html">How to buy?</a></li>
+                        <li><a href="faq.html">Faqs</a></li>
+                        <li><a href="#">Whitepaper</a></li>
+                        <li>Contact Support<span>info@cryptowallet.com</span></li>
+                    </ul><!-- .user-nav -->
+                    <div class="d-lg-none">
+                        <div class="user-sidebar-sap"></div>
+                        <div class="gaps-1x"></div>
+                        <ul class="topbar-action-list">
+                            <li class="topbar-action-item topbar-action-link">
+                                <a href="#"><em class="ti ti-home"></em> Go to main site</a>
+                            </li><!-- .topbar-action-item -->
+                            <li class="dropup topbar-action-item topbar-action-language">
+                                <a href="#" data-toggle="dropdown" aria-haspopup="true"> EN <em class="ti ti-angle-up"></em> </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">FR</a></li>
+                                    <li><a href="#">JY</a></li>
+                                    <li><a href="#">CH</a></li>
+                                </ul>
+                            </li><!-- .topbar-action-item -->
+                        </ul><!-- .topbar-action-list -->
+                    </div>
+                </div><!-- .user-sidebar -->
+                
+                <div class="user-content">
+                    <div class="user-panel" >
+
+                           
+                                <div style="width: 100%;">
+                                    <ul class="tabs" data-persist="true">
+                                        <li><a href="#view1">ETH</a></li>
+                                        <li><a href="#view2">BTC</a></li>
+                                        <li><a href="#view3">LTC</a></li>
+                                        <li><a href="#view4">DASH</a></li>
+                                        <li><a href="#view5">XRP</a></li>
+                                    </ul>
+                                    <div class="tabcontents">
+                                        <div id="view1">
+                                            
+                                        <div class="row" style="margin-top:40px">
+                                            <div class="col-md-4">                    
+                            
+                                            <h2>Total Balance:</h2>
+                                            <form id="get-balance-form">
+                                            <button type="submit" class="btn btn-primary">Get Balance</button>
+                                            <div id="the-balance">Click Button to get the current balance.</div>
+                                            </form>
+                                          </div>
+                          
+                                        <div class="col-md-4"> 
+                                            <h2>Money Sent</h2>
+                                            <form id="get-balance-form">
+                                            <button type="submit" class="btn btn-primary">Money Sent</button>
+                                            <div id="the-balance">Click Button to get money sent.</div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-4"> 
+                                            <h2>MoneyReceived</h2>
+                                            <form id="get-balance-form">
+                                            <button type="submit" class="btn btn-primary">Money Received</button>
+                                            <div id="the-balance">Click Button to get money received.</div>
+                                            </form>                                            
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <h2> Latest Transactions</h2>
+                                    <div> </div>
+                                           
+                                        </div>
+                                        <div id="view2">
+                                            <b>Switch to other templates</b>
+                                            <p>Open this page with Notepad, and update the CSS link to:</P>
+                                            <p>template1 ~ 6.</p>                
+                                        </div>
+                                        <div id="view3">
+                                            <b>Advanced</b>
+                                            <p>If you expect a more feature-rich version of the tabber, you can use the advanced version of the script, 
+                                                <a href="http://www.menucool.com/jquery-tabs">McTabs - jQuery Tabs</a>:</p>
+                                            <ul>
+                                                <li>URL support: a hash id in the URL can select a tab</li>
+                                                <li>Bookmark support: select a tab via bookmark anchor</li>
+                                                <li>Select tabs by mouse over</li>
+                                                <li>Auto advance</li>
+                                                <li>Smooth transitional effect</li>
+                                                <li>Content can retrieved from other documents or pages through Ajax</li>
+                                                <li>... and more</li>     
+                                            </ul>
+                                        </div>
+                                        <div id="view4">
+                                            <b>Advanced</b>
+                                            <p>If you expect a more feature-rich version of the tabber, you can use the advanced version of the script, 
+                                                <a href="http://www.menucool.com/jquery-tabs">McTabs - jQuery Tabs</a>:</p>
+                                            <ul>
+                                                <li>URL support: a hash id in the URL can select a tab</li>
+                                                <li>Bookmark support: select a tab via bookmark anchor</li>
+                                                <li>Select tabs by mouse over</li>
+                                                <li>Auto advance</li>
+                                                <li>Smooth transitional effect</li>
+                                                <li>Content can retrieved from other documents or pages through Ajax</li>
+                                                <li>... and more</li>     
+                                            </ul>
+                                        </div>
+                                        <div id="view5">
+                                            <b>Advanced</b>
+                                            <p>If you expect a more feature-rich version of the tabber, you can use the advanced version of the script, 
+                                                <a href="http://www.menucool.com/jquery-tabs">McTabs - jQuery Tabs</a>:</p>
+                                            <ul>
+                                                <li>URL support: a hash id in the URL can select a tab</li>
+                                                <li>Bookmark support: select a tab via bookmark anchor</li>
+                                                <li>Select tabs by mouse over</li>
+                                                <li>Auto advance</li>
+                                                <li>Smooth transitional effect</li>
+                                                <li>Content can retrieved from other documents or pages through Ajax</li>
+                                                <li>... and more</li>     
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>          
+                                                     
+
+                    </div><!-- .user-panel -->
+                </div><!-- .user-content -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- UserWraper End -->
+    
+    
+    <div class="footer-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <span class="footer-copyright">Copyright 2020, <a href="#">CryptoWallet</a>.  All Rights Reserved.</span>
+                </div><!-- .col -->
+                <div class="col-md-5 text-md-right">
+                    <ul class="footer-links">
+                        <li><a href="policy.html">Privacy Policy</a></li>
+                        <li><a href="policy.html">Terms of Service</a></li>
+                    </ul>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div>
+    <!-- FooterBar End -->
+    
+    
+	<!-- JavaScript (include all script here) -->
+	<script src="assets/js/jquery.bundle.js?ver=101"></script>
+  <script src="assets/js/script.js?ver=101"></script>
+  
+  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="web3.min.js"></script>
     <script src="contractsABI.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
 
     <script>
       var contractAddress = '0xbaB4dF8A7E8Fb0bB0cE049ca931276e735e5a7De';
@@ -118,5 +387,5 @@
   
       </script>
 
-    </body>
+</body>
 </html>

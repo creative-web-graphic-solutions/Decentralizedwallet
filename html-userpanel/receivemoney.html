@@ -13,7 +13,8 @@
 	<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=101">
 	<!-- Custom styles for this template -->
 	<link rel="stylesheet" href="assets/css/style.css?ver=101">    
-   
+    <script src="tabcontent.js" type="text/javascript"></script>
+    <link href="tabcontent.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="user-dashboard">
@@ -34,7 +35,7 @@
 
                     <div class="site-logo">
                         <a href="index.html" class="site-brand">
-                            <img src="images/logo.jpg" alt="logo" srcset="images/logo2x.jpg 2x">
+                            <img src="images/logo.jpg" alt="logo" srcset="">
                         </a>
                     </div><!-- .site-logo -->
                     
@@ -196,122 +197,106 @@
                 
                 <div class="user-content">
                     <div class="user-panel">
-                        <h2 class="user-panel-title">Account Information</h2>
-                        
-                        <ul class="nav nav-tabs nav-tabs-line" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#personal-data">Personal Data</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#wallet-address">Wallet Address</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#notification">Notification</a>
-                            </li>
-                        </ul><!-- .nav-tabs-line -->
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="personal-data">
-                                <form action="#">
-                                    <div class="input-item input-with-label">
-                                        <label for="full-name" class="input-item-label">Full Name</label>
-                                        <input class="input-bordered" type="text" id="full-name" name="full-name">
-                                    </div><!-- .input-item -->
-                                    <div class="input-item input-with-label">
-                                        <label for="sur-name" class="input-item-label">Surname</label>
-                                        <input class="input-bordered" type="text" id="sur-name" name="sur-name">
-                                    </div><!-- .input-item -->
-                                    <div class="input-item input-with-label">
-                                        <label for="email-address" class="input-item-label">Email Address</label>
-                                        <input class="input-bordered" type="text" id="email-address" name="email-address">
-                                    </div><!-- .input-item -->
-                                    <div class="input-item input-with-label">
-                                        <label for="mobile-number" class="input-item-label">Mobile Number</label>
-                                        <input class="input-bordered" type="text" id="mobile-number" name="mobile-number">
-                                    </div><!-- .input-item -->
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="input-item input-with-label">
-                                                <label for="date-of-birth" class="input-item-label">Date of Birth</label>
-                                                <input class="input-bordered date-picker" type="text" id="date-of-birth" name="date-of-birth">
-                                            </div><!-- .input-item -->
-                                        </div><!-- .col -->
-                                        <div class="col-md-6">
-                                            <div class="input-item input-with-label">
-                                                <label for="nationality" class="input-item-label">Nationality</label>
-                                                <select class="country-select" name="Nationality" id="Nationality">
-                                                    <option value="us">United State</option>
-                                                    <option value="uk">United KingDom</option>
-                                                    <option value="fr">France</option>
-                                                    <option value="ch">China</option>
-                                                    <option value="cr">Czech Republic</option>
-                                                    <option value="cb">Colombia</option>
-                                                </select>
-                                            </div><!-- .input-item -->
-                                        </div><!-- .col -->
-                                    </div><!-- .row -->
-                                    <div class="gaps-1x"></div><!-- 10px gap -->
-                                    <div class="d-sm-flex justify-content-between align-items-center">
-                                        <button class="btn btn-primary">Update</button>
-                                        <div class="gaps-2x d-sm-none"></div>
-                                        <span class="color-success"><em class="ti ti-check-box"></em> All Changes are saved</span>
-                                    </div>
-                                </form><!-- form -->
-                            </div><!-- .tab-pane -->
-                            <div class="tab-pane fade" id="wallet-address">
-                                <p>In order to receive your Tokens or assets, please select your wallet addres and you have to put the address below input box. You will receive  to this address.</p>
-                                <form action="#">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="input-item input-with-label">
-                                                <label for="swalllet" class="input-item-label">Select Wallet </label>
-                                                <select class="input-bordered" name="swalllet" id="swalllet">
-                                                    <option value="eth">Ethereum</option>
-                                                    <option value="dac">DashCoin</option>
-                                                    <option value="bic">BitCoin</option>
-                                                </select>
-                                            </div><!-- .input-item -->
-                                        </div><!-- .col -->
-                                    </div><!-- .row -->
-                                    <div class="input-item input-with-label">
-                                        <label for="token-address" class="input-item-label">Your Address for tokens:</label>
-                                        <input class="input-bordered" type="text" id="token-address" name="token-address" value="0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae">
-                                        <span class="input-note">Note: Address should be ERC20-compliant.</span>
-                                    </div><!-- .input-item -->
-                                    <div class="gaps-2x"></div>
-                                    <div class="note note-plane note-danger">
-                                        <em class="fas fa-info-circle"></em>
-                                        <p>DO NOT USE your exchange wallet address such as Kraken, Bitfinex, Bithumb, Binance etc. You can use MetaMask, MyEtherWallet, Mist wallets etc. Do not use the address if you don’t have a private key of the your address. You WILL NOT receive Tokens and WILL LOSE YOUR FUNDS if you do.</p>
-                                    </div>
-                                    <div class="gaps-3x"></div>
-                                    <div class="gaps-1x"></div><!-- 10px gap -->
-                                    <div class="d-sm-flex justify-content-between align-items-center">
-                                        <button class="btn btn-primary">Update</button>
-                                        <div class="gaps-2x d-sm-none"></div>
-                                        <span class="color-success"><em class="ti ti-check-box"></em> Saved your wallet address</span>
-                                    </div>
-                                </form><!-- form -->
-                            </div><!-- .tab-pane -->
-                            <div class="tab-pane fade" id="notification">
-                                <p>You can manage your all kind of notification from here.</p>
-                                <div class="gaps-1x"></div>
-                                <ul class="notification-list">
+                        <h2 class="user-panel-title">Send Money </h2>
+
+                        <div style="width: 100%; margin: 0 auto;">
+                            <ul class="tabs" data-persist="true">
+                                <li><a href="#view1">ETH</a></li>
+                                <li><a href="#view2">BTC</a></li>
+                                <li><a href="#view3">LTC</a></li>
+                                <li><a href="#view4">DASH</a></li>
+                                <li><a href="#view5">XRP</a></li>
+                            </ul>
+                            <div class="tabcontents">
+                                <div id="view1">
+                                    <form id="contract-form">
+                                        <div class="form-group">
+                                          <label for="Sender Address">Sender ETH Address</label>
+                                          <input value="" type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" placeholder="Enter your address" required="true">
+                                          <small id="fromAddressHelp" class="form-text text-muted">Enter your wallet address. Note: you will need to approve this with your private key.</small>
+                                        </div>
+                                          <div class="form-group">
+                                            <label for="Receiver Address">Receiver ETH Address</label>
+                                            <input value="0x2932b7A2355D6fecc4b5c0B6BD44cC31df247a2e" type="text" class="form-control" id="toAddress" aria-describedby="toAddressHelp" placeholder="Enter the receipient address" required="true">
+                                            <small id="toAddressHelp" class="form-text text-muted">Enter the wallet address of the recipient.</small>
+                                          </div>
+                                            <div class="form-group">
+                                              <label for="Amount">Amount</label>
+                                              <input value="2" type="text" class="form-control" id="amount" aria-describedby="amountHelp" placeholder="Amount to send in ETH" required="true">
+                                              <small id="amountHelp" class="form-text text-muted">How much you want to send in ETH.</small>
+                                            </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <div id="deposit-result">Click the Submit button to deposit your ETH to the contract.</div>
+                                      </form>
+                                      <hr>
+                                      <h2>Balance:</h2>
+                                      <form id="get-balance-form">
+                                        <button type="submit" class="btn btn-primary">Get Balance</button>
+                                        <div id="the-balance">Click Button to get the current contract balance.</div>
+                                      </form>
+                                      <h2>Approver:</h2>
+                                      <form id="approver-form">
+                                        <button type="submit" class="btn btn-primary">Get Approver</button>
+                                        <div id="approver-display">Click Button to get the address of the approver.</div>
+                                      </form>
+                                  
+                                      <form id="approve-form">
+                                        <button type="submit" class="btn btn-primary">Approve Transaction</button>
+                                        <div id="approval-display">Click the button to approve the transaction.</div>
+                                      </form>
+            
                                    
-                                    <li>
-                                        <span>Notify me by email for latest news</span>
-                                        <div class="padl-2x"><input class="input-switch" type="checkbox" checked id="lnews"><label for="lnews"></label></div>
-                                    </li>
-                                    <li>
-                                        <span>Alert me by email for unusual activity.</span>
-                                        <div class="padl-2x"><input class="input-switch" type="checkbox" checked id="unuact"><label for="unuact"></label></div>
-                                    </li>
-                                </ul>
-                                <div class="gaps-4x"></div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span></span>
-                                    <span class="color-success"><em class="ti ti-check-box"></em> Update Notification Settings</span>
                                 </div>
-                            </div><!-- .tab-pane -->
-                        </div><!-- .tab-content -->
+                                <div id="view2">
+                                    <b>Switch to other templates</b>
+                                    <p>Open this page with Notepad, and update the CSS link to:</P>
+                                    <p>template1 ~ 6.</p>                
+                                </div>
+                                <div id="view3">
+                                    <b>Advanced</b>
+                                    <p>If you expect a more feature-rich version of the tabber, you can use the advanced version of the script, 
+                                        <a href="http://www.menucool.com/jquery-tabs">McTabs - jQuery Tabs</a>:</p>
+                                    <ul>
+                                        <li>URL support: a hash id in the URL can select a tab</li>
+                                        <li>Bookmark support: select a tab via bookmark anchor</li>
+                                        <li>Select tabs by mouse over</li>
+                                        <li>Auto advance</li>
+                                        <li>Smooth transitional effect</li>
+                                        <li>Content can retrieved from other documents or pages through Ajax</li>
+                                        <li>... and more</li>     
+                                    </ul>
+                                </div>
+                                <div id="view4">
+                                    <b>Advanced</b>
+                                    <p>If you expect a more feature-rich version of the tabber, you can use the advanced version of the script, 
+                                        <a href="http://www.menucool.com/jquery-tabs">McTabs - jQuery Tabs</a>:</p>
+                                    <ul>
+                                        <li>URL support: a hash id in the URL can select a tab</li>
+                                        <li>Bookmark support: select a tab via bookmark anchor</li>
+                                        <li>Select tabs by mouse over</li>
+                                        <li>Auto advance</li>
+                                        <li>Smooth transitional effect</li>
+                                        <li>Content can retrieved from other documents or pages through Ajax</li>
+                                        <li>... and more</li>     
+                                    </ul>
+                                </div>
+                                <div id="view5">
+                                    <b>Advanced</b>
+                                    <p>If you expect a more feature-rich version of the tabber, you can use the advanced version of the script, 
+                                        <a href="http://www.menucool.com/jquery-tabs">McTabs - jQuery Tabs</a>:</p>
+                                    <ul>
+                                        <li>URL support: a hash id in the URL can select a tab</li>
+                                        <li>Bookmark support: select a tab via bookmark anchor</li>
+                                        <li>Select tabs by mouse over</li>
+                                        <li>Auto advance</li>
+                                        <li>Smooth transitional effect</li>
+                                        <li>Content can retrieved from other documents or pages through Ajax</li>
+                                        <li>... and more</li>     
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>                      
+                    
                     </div><!-- .user-panel -->
                 </div><!-- .user-content -->
             </div><!-- .d-flex -->
@@ -340,6 +325,75 @@
     
 	<!-- JavaScript (include all script here) -->
 	<script src="assets/js/jquery.bundle.js?ver=101"></script>
-	<script src="assets/js/script.js?ver=101"></script>
+    <script src="assets/js/script.js?ver=101"></script>
+    
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="web3.min.js"></script>
+    <script src="contractsABI.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+
+    <script>
+      var contractAddress = '0xbaB4dF8A7E8Fb0bB0cE049ca931276e735e5a7De';
+      if ( typeof web3 != 'undefined') {
+        web3 = new Web3(web3.currentProvider);
+      } else {
+        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+      }
+  
+      var version = web3.version;
+      console.log("using web3 version: " + version);
+
+      var ApprovalContract = new web3.eth.Contract(abi, contractAddress);
+       
+      console.log(ApprovalContract);
+  
+      $('#contract-form').submit(function() {
+        event.preventDefault();
+        var fromAddress = $('#fromAddress').val();
+        var toAddress = $('#toAddress').val();
+        var amount = $('#amount').val();
+        if (web3.utils.isAddress(fromAddress) != true) {
+          alert('You did not enter a correct ethereum address for the sender.');
+          return;
+        }
+        if (web3.utils.isAddress(toAddress) != true) {
+          alert('You did not enter a correct ethereum address for the recipient');
+          return;
+        }
+        if (amount == 0) {
+          alert('You must send more than 0 ETH');
+          return;
+        }
+
+        ApprovalContract.methods.deposit(toAddress).send({from: fromAddress, gas: 100000, value: web3.utils.toWei(amount,'ether')},
+        function(error, result) {
+          if (error) {
+            console.log('error: ' + error);
+              $('#deposit-result').html('Error: ' + error);
+          } else {
+            $('#deposit-result').html('Success TX: <b>' + result + '</b>');
+          }
+        })
+    });
+    
+      $('#get-balance-form').submit(function() {
+        event.preventDefault();  
+        web3.eth.getBalance(contractAddress,
+          function(error, result) {
+            if (error) {
+              console.log('error: ' + error);
+            } else {
+              console.log('balance:' + result);
+              $('#the-balance').html('<b>Current Balance:</b> ' + web3.utils.fromWei(result));
+            }
+          });
+      });
+  
+      </script>
+                       
+
 </body>
 </html>
