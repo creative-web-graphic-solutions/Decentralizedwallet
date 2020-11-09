@@ -15,11 +15,61 @@
     <link rel="stylesheet" href="assets/css/style.css?ver=101">    
     <script src="tabcontent.js" type="text/javascript"></script>
     <link href="tabcontent.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="../assets/css/vendor.bundle.css?ver=192">
+    <link rel="stylesheet" href="../assets/css/style.css?ver=192" id="changeTheme">
+
+       <!-- 1. Install Magic SDK -->
+       <script src="https://cdn.jsdelivr.net/npm/magic-sdk/dist/magic.js"></script>
+       <script>
+       /* 2. Initialize Magic Instance */
+       
+       const magic = new Magic("pk_live_D56A7D5C8652269B");
+ 
+       /* 3️⃣ Implement Render Function */
+     
+       const render = async () => {
+         const isLoggedIn = await magic.user.isLoggedIn();  
+           
+        
+         
+           /* Get user metadata including email */
+           const userMetadata = await magic.user.getMetadata();
+           html = `
+ 
+             <h1>Current user: ${userMetadata.email}</h1>
+             
+             <button onclick="handleLogout()">Logout</button>
+           `;
+         
+         document.getElementById("app").innerHTML = html;
+         
+       };
+       
+ 
+       /* 4. Implement Login Handler */
+       const handleLogin = async (e) => {
+         e.preventDefault();
+         const email = new FormData(e.target).get("email");
+         if (email) {
+           /* One-liner login 🤯 */
+           await magic.auth.loginWithMagicLink({ email });
+           render();
+         }
+       };
+ 
+       /* 5. Implement Logout Handler */
+       const handleLogout = async () => {
+         await magic.user.logout();
+         render();
+       };
+     </script>
     
 </head>
 
-<body class="user-dashboard">
-    
+<body class="user-dashboard" style="background-color: #EAF3FC;" onload="render()">
+    <div id="app"></div>
     
     <div class="topbar">
         <div class="topbar-md d-lg-none">
@@ -68,7 +118,14 @@
                                     <li><a href="activity.html"><i class="ti ti-eye"></i>Activity</a></li>
                                 </ul>
                                 <ul class="user-dropdown-links">
-                                    <li><a href="login.html"><i class="ti ti-power-off"></i>Logout</a></li>
+                                    <li>
+                                                                          
+                                     const userMetadata = await magic.user.getMetadata();
+         
+                                    <button onclick="handleLogout()">Logout</button>
+         
+                      
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -125,7 +182,14 @@
                                         <li><a href="activity.html"><i class="ti ti-eye"></i>Activity</a></li>
                                     </ul>
                                     <ul class="user-dropdown-links">
-                                        <li><a href="login.html"><i class="ti ti-power-off"></i>Logout</a></li>
+                                        <li>                                 
+                                                                          
+        
+                                 
+                    
+                                 <button onclick="handleLogout()">Logout</button>         
+       
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -202,19 +266,15 @@
                            
                                 <div style="width: 100%;">
                                     <ul class="tabs" data-persist="true">
-                                        <li><a href="#view1">ETH</a></li>
-                                        <li><a href="#view2">BTC</a></li>
-                                        <li><a href="#view3">LTC</a></li>
-                                        <li><a href="#view4">DASH</a></li>
-                                        <li><a href="#view5">XRP</a></li>
-                                    </ul>
+                                        <li><a href="#view1">&nbsp;Dashboard View</a></li>
+                                       </ul> 
                                     <div class="tabcontents">
                                         <div id="view1">
                                             
                                         <div class="row" style="margin-top:40px">
                                             <div class="col-md-4">                    
                             
-                                            <h2>Total Balance:</h2>
+                                            <h3>Total Balance:</h3>
                                             <form id="get-balance-form">
                                             <button type="submit" class="btn btn-primary">Get Balance</button>
                                             <div id="the-balance">Click Button to get the current balance.</div>
@@ -222,14 +282,14 @@
                                           </div>
                           
                                         <div class="col-md-4"> 
-                                            <h2>Money Sent</h2>
+                                            <h3>Money Sent</h3>
                                             <form id="get-balance-form">
                                             <button type="submit" class="btn btn-primary">Money Sent</button>
                                             <div id="the-balance">Click Button to get money sent.</div>
                                             </form>
                                         </div>
-                                        <div class="col-md-4"> 
-                                            <h2>MoneyReceived</h2>
+                                        <div class="col-md-3"> 
+                                            <h3>MoneyReceived</h3>
                                             <form id="get-balance-form">
                                             <button type="submit" class="btn btn-primary">Money Received</button>
                                             <div id="the-balance">Click Button to get money received.</div>
@@ -237,60 +297,125 @@
                                         </div>
                                     </div>
                                     <br>
-                                    <h2> Latest Transactions</h2>
-                                    <div> </div>
-                                           
-                                        </div>
-                                        <div id="view2">
-                                            <b>Switch to other templates</b>
-                                            <p>Open this page with Notepad, and update the CSS link to:</P>
-                                            <p>template1 ~ 6.</p>                
-                                        </div>
-                                        <div id="view3">
-                                            <b>Advanced</b>
-                                            <p>If you expect a more feature-rich version of the tabber, you can use the advanced version of the script, 
-                                                <a href="http://www.menucool.com/jquery-tabs">McTabs - jQuery Tabs</a>:</p>
-                                            <ul>
-                                                <li>URL support: a hash id in the URL can select a tab</li>
-                                                <li>Bookmark support: select a tab via bookmark anchor</li>
-                                                <li>Select tabs by mouse over</li>
-                                                <li>Auto advance</li>
-                                                <li>Smooth transitional effect</li>
-                                                <li>Content can retrieved from other documents or pages through Ajax</li>
-                                                <li>... and more</li>     
-                                            </ul>
-                                        </div>
-                                        <div id="view4">
-                                            <b>Advanced</b>
-                                            <p>If you expect a more feature-rich version of the tabber, you can use the advanced version of the script, 
-                                                <a href="http://www.menucool.com/jquery-tabs">McTabs - jQuery Tabs</a>:</p>
-                                            <ul>
-                                                <li>URL support: a hash id in the URL can select a tab</li>
-                                                <li>Bookmark support: select a tab via bookmark anchor</li>
-                                                <li>Select tabs by mouse over</li>
-                                                <li>Auto advance</li>
-                                                <li>Smooth transitional effect</li>
-                                                <li>Content can retrieved from other documents or pages through Ajax</li>
-                                                <li>... and more</li>     
-                                            </ul>
-                                        </div>
-                                        <div id="view5">
-                                            <b>Advanced</b>
-                                            <p>If you expect a more feature-rich version of the tabber, you can use the advanced version of the script, 
-                                                <a href="http://www.menucool.com/jquery-tabs">McTabs - jQuery Tabs</a>:</p>
-                                            <ul>
-                                                <li>URL support: a hash id in the URL can select a tab</li>
-                                                <li>Bookmark support: select a tab via bookmark anchor</li>
-                                                <li>Select tabs by mouse over</li>
-                                                <li>Auto advance</li>
-                                                <li>Smooth transitional effect</li>
-                                                <li>Content can retrieved from other documents or pages through Ajax</li>
-                                                <li>... and more</li>     
-                                            </ul>
-                                        </div>
+                                    
+                                    <div>
+                                        <table class="data-table dt-filter-init">
+                                            <thead class="bg-primary" >
+                                                <tr class="data-head" >
+                                                    <th  style="color: aliceblue; width: 10%;">Index</th>
+                                                    <th  style="color: aliceblue; width: 40%;">Digital Asset</th>
+                                                    <th  style="color: aliceblue; width: 30%;" >Send</th>
+                                                    <th  style="color: aliceblue; width: 30%;" >Receive</th>
+                                                </tr>
+                                                <!-- <tr class="data-head text-center">
+                                                    <th class="data-col data-col-five">Mobile</th>
+                                                    <th class="data-col data-col-six">Desktop</th>                                            
+                                                    <th class="data-col data-col-seven">Send</th>
+                                                    <th class="data-col data-col-eight">Receive</th>
+                                                    <th class="data-col data-col-nine">Exchange</th>
+                                                    <th class="data-col data-col-ten">Info</th>
+                                                </tr> -->
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr class="data-item">
+                                                    <td class="data-col-inner index">
+                                                        1
+                                                    </td>
+                                                    <td class="data-col-inner alphabetical">
+                                                        <div class="d-flex align-items-center">
+                                                            <em class="icon-bg icon-bg-md icon-bg-eth ikon ikon-eth"></em>
+                                                            <h4 class="title title-sm title-dark"> &nbsp;Ethereum (ETH)</h4>
+                                                        </div>
+                                                    </td>
+                                                    <td class="data-col-inner">
+                                                        <em class="text-theme-alt ti ti-check"></em>
+                                                    </td>
+                                                    <td class="data-col-inner">
+                                                        <em class="text-theme-alt ti ti-check"></em>
+                                                    </td>
+                                                   
+                                                    
+                                                </tr><!-- .data-item -->
+                                                <tr class="data-item">
+                                                    <td class="data-col-inner index">
+                                                        2
+                                                    </td>
+                                                    <td class="data-col-inner alphabetical">
+                                                        <div class="d-flex align-items-center">
+                                                            <em class="icon-bg icon-bg-md icon-bg-btc ikon ikon-btc"></em>
+                                                            <h4 class="title title-sm title-dark">&nbsp;Bitcoin (BTC)</h4>
+                                                        </div>
+                                                    </td>
+                                                    <td class="data-col-inner">
+                                                        <em class="text-theme-alt ti ti-check"></em>
+                                                    </td>
+                                                    <td class="data-col-inner">
+                                                        <em class="text-theme-alt ti ti-check"></em>
+                                                    </td>
+                                                   
+                                                <tr class="data-item">
+                                                    <td class="data-col-inner index">
+                                                        3
+                                                    </td>
+                                                    <td class="data-col-inner alphabetical">
+                                                        <div class="d-flex align-items-center">
+                                                            <em class="icon-bg icon-bg-md icon-bg-ltc ikon ikon-ltc"></em>
+                                                            <h4 class="title title-sm title-dark">Lite Coin (LTC)</h4>
+                                                        </div>
+                                                    </td>
+                                                    <td class="data-col-inner">
+                                                        <em class="text-theme-alt ti ti-check"></em>
+                                                    </td>
+                                                    <td class="data-col-inner">
+                                                        <em class="text-theme-alt ti ti-check"></em>
+                                                    </td>
+                                                   
+                                                   
+                                                <tr class="data-item">
+                                                    <td class="data-col-inner index">
+                                                        4
+                                                    </td>
+                                                    <td class="data-col-inner alphabetical">
+                                                        <div class="d-flex align-items-center">
+                                                            <em class="icon-bg icon-bg-md icon-bg-dash ikon ikon-dash"></em>
+                                                            <h4 class="title title-sm title-dark">Ethereum (DASH)</h4>
+                                                        </div>
+                                                    </td>
+                                                    <td class="data-col-inner">
+                                                        <em class="text-theme-alt ti ti-check"></em>
+                                                    </td>
+                                                    <td class="data-col-inner">
+                                                        <em class="text-theme-alt ti ti-check"></em>
+                                                    </td>
+                                                   
+                                                  
+                                                <tr class="data-item">
+                                                    <td class="data-col-inner index">
+                                                        5
+                                                    </td>
+                                                    <td class="data-col-inner alphabetical">
+                                                        <div class="d-flex align-items-center">
+                                                            <em class="icon-bg icon-bg-md icon-bg-xrp ikon ikon-xrp"></em>
+                                                            <h4 class="title title-sm title-dark">Ripple (XRP)</h4>
+                                                        </div>
+                                                    </td>
+                                                    <td class="data-col-inner">
+                                                        <em class="text-theme-alt ti ti-check"></em>
+                                                    </td>
+                                                    <td class="data-col-inner">
+                                                        <em class="text-theme-alt ti ti-check"></em>
+                                                    </td>
+                                                   
+                                                 
+                                                
+                                            </tbody>
+                                        </table>
+                                        
                                     </div>
-                                </div>          
-                                                     
+                                    <br>
+                                    <h2> Latest Transactions</h2>
+                                        </div>                                
+                                       
 
                     </div><!-- .user-panel -->
                 </div><!-- .user-content -->
