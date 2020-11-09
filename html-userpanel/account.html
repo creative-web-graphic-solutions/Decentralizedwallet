@@ -12,15 +12,16 @@
 	<!-- Vendor Bundle CSS -->
 	<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=101">
 	<!-- Custom styles for this template -->
-    <link rel="stylesheet" href="assets/css/style.css?ver=101">    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-    <link rel="stylesheet" href="../assets/css/vendor.bundle.css?ver=192">
-    <link rel="stylesheet" href="../assets/css/style.css?ver=192" id="changeTheme">
-
-   
+	<link rel="stylesheet" href="assets/css/style.css?ver=101">    
+      <!-- 1. Install Magic SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/magic-sdk/dist/magic.js"></script>
+    <script>
+      /* 2. Initialize Magic Instance */
+      const magic = new Magic("pk_test_02C094FF86DC35C4");
+    </script>
 </head>
 
-<body class="user-dashboard" style="background-color: #EAF3FC;" onload="render()">
+<body class="user-dashboard">
     
     
     <div class="topbar">
@@ -38,7 +39,7 @@
 
                     <div class="site-logo">
                         <a href="index.html" class="site-brand">
-                            <img src="images/logo.jpg" alt="logo" srcset="images/logo2x.jpg 2x">
+                            <img src="" alt="logo" srcset="">
                         </a>
                     </div><!-- .site-logo -->
                     
@@ -61,7 +62,7 @@
                                 </div>
                                 <ul class="user-dropdown-btns btn-grp guttar-10px">
                                     <li><a href="#" class="btn btn-xs btn-warning">Confirm Email</a></li>
-                                    <li><a href="sendmoney.html" class="btn btn-xs btn-warning">Send Money</a></li>
+                                    <li><a href="kyc.html" class="btn btn-xs btn-warning">KYC Pending</a></li>
                                 </ul>
                                 <div class="gaps-1x"></div>
                                 <ul class="user-dropdown-links">
@@ -84,7 +85,7 @@
                 <div class="topbar-lg d-none d-lg-block">
                     <div class="site-logo">
                         <a href="index.html" class="site-brand">
-                            <img src="images/logo.jpg" alt="logo" srcset="">
+                            <img src="" alt="logo" srcset="">
                         </a>
                     </div><!-- .site-logo -->
                 </div><!-- .topbar-lg -->
@@ -165,10 +166,10 @@
                     </div><!-- .user-box -->
                     <ul class="user-icon-nav">
                         <li><a href="index.html"><em class="ti ti-dashboard"></em>Dashboard</a></li>
-                        <li><a href="sendmoney.html"><em class="ti ti-files"></em>Send Money</a></li>
-                        <li><a href="receivemoney.html"><em class="ti ti-pie-chart"></em>Receive Money</a></li>
-                        <li><a href="transactions.html"><em class="ti ti-control-shuffle"></em>Transactions History</a></li>
-                        
+                        <li><a href="kyc.html"><em class="ti ti-files"></em>KYC Application</a></li>
+                        <li><a href="tokens.html"><em class="ti ti-pie-chart"></em>Contributions</a></li>
+                        <li><a href="transactions.html"><em class="ti ti-control-shuffle"></em>Transactions</a></li>
+                        <li><a href="referrals.html"><em class="ti ti-infinite"></em>Referral</a></li>
                         <li><a href="account.html"><em class="ti ti-user"></em>Account</a></li>
                         <li><a href="security.html"><em class="ti ti-lock"></em>Security</a></li>
                     </ul><!-- .user-icon-nav -->
