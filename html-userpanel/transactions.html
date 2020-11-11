@@ -145,7 +145,7 @@
                 <div class="user-sidebar">
                     <div class="user-sidebar-overlay"></div>
                     <div class="user-box d-none d-lg-block">
-                        <div class="user-image">
+                        <!-- <div class="user-image">
                             <img src="images/user-thumb-lg.png" alt="thumb">
                         </div>
                         <h6 class="user-name">Mike Thomas</h6>
@@ -153,13 +153,16 @@
                         <ul class="btn-grp guttar-10px">
                             <li><a href="#" class="btn btn-xs btn-warning">Confirm Email</a></li>
                             <li><a href="kyc.html" class="btn btn-xs btn-warning">KYC Pending</a></li>
-                        </ul>
+                        </ul> -->
                     </div><!-- .user-box -->
+                    
                     <ul class="user-icon-nav">
+                        <h3>Main</h3>
                         <li><a href="index.html"><em class="ti ti-dashboard"></em>Dashboard</a></li>
                         <li><a href="sendmoney.html"><em class="ti ti-files"></em>Send Money</a></li>
                         <li><a href="receivemoney.html"><em class="ti ti-pie-chart"></em>Receive Money</a></li>
                         <li><a href="transactions.html"><em class="ti ti-control-shuffle"></em>Transactions History</a></li>
+                        <li><a href="tokens.html"><em class="ti ti-pie-chart"></em>Contributions</a></li>
                         <li><a href="account.html"><em class="ti ti-user"></em>Account</a></li>
                         <li><a href="security.html"><em class="ti ti-lock"></em>Security</a></li>
                     </ul><!-- .user-icon-nav -->
@@ -328,11 +331,11 @@
     <!-- UserWraper End -->
     
     
-    <div class="modal fade" id="tranxPending" tabindex="-1">
+    <div class="modal fade" id="tranxPending" tabindex="-1" >
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: white;">
                 <a href="#" class="modal-close" data-dismiss="modal" aria-label="Close"><em class="ti ti-close"></em></a>
-                <div class="tranx-popup">
+                <div class="tranx-popup" style="background-color: white;" >
                     <h5>View Transaction Details</h5>
                     <div class="tranx-purchase-details d-none active">
                         <p>Transaction <strong>ICIYOW0102</strong> was place on <strong>24-Jul-2020, 12:10 am</strong> and <br> is currently <strong>Pending Payment</strong>. <a href="#" class="make-pay">Please Make your payment <em class="ti ti-arrow-right"></em></a></p>
@@ -373,7 +376,7 @@
                             </li><!-- li -->
                         </ul><!-- .tranx-purchase-info -->
                         
-                        <h6>Payment Deposit From <em class="ti ti-arrow-right"></em> <span>Ethereum Address</span></h6>
+                        <h6 style="color:white">Payment Deposit From <em class="ti ti-arrow-right"></em> <span>Ethereum Address</span></h6>
                         <div class="tranx-payment-info">
                             <em class="fab fa-ethereum"></em>
                             <input type="text" class="tranx-payment-address" value="0x4156d3342d5c385a87d264f90653733592000581" disabled>
@@ -469,7 +472,7 @@
                             </li><!-- li -->
                         </ul><!-- .tranx-purchase-info -->
                         
-                        <h6>Payment Deposit From <em class="ti ti-arrow-right"></em> <span>Ethereum Address</span></h6>
+                        <h6  style="color:white">Payment Deposit From <em class="ti ti-arrow-right"></em> <span>Ethereum Address</span></h6>
                         <div class="tranx-payment-info">
                             <em class="fab fa-ethereum"></em>
                             <input type="text" class="tranx-payment-address" value="0x4156d3342d5c385a87d264f90653733592000581" disabled>

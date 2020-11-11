@@ -152,29 +152,30 @@
                 <div class="user-sidebar">
                     <div class="user-sidebar-overlay"></div>
                     <div class="user-box d-none d-lg-block">
-                        <div class="user-image">
+                        <!-- <div class="user-image">
                             <img src="images/user-thumb-lg.png" alt="thumb">
                         </div>
                         <h6 class="user-name">Mike Thomas</h6>
                         <div class="user-uid">Unique ID: <span>CWGS1105</span></div>
                         <ul class="btn-grp guttar-10px">
-<!--
+
                             <li><a href="#" class="btn btn-xs btn-warning">Confirm Email</a></li>
                             <li><a href="kyc.html" class="btn btn-xs btn-warning">KYC Pending</a>
--->
+
                             <li>
                             /* Get user metadata including email */
                             const userMetadata = await magic.user.getMetadata();    
                             <h1>Current user: ${userMetadata.email}</h1>    
                             </li>    
-                        </ul>
+                        </ul> -->
                     </div><!-- .user-box -->
                     <ul class="user-icon-nav">
+                        <h3>Main</h3>
                         <li><a href="index.html"><em class="ti ti-dashboard"></em>Dashboard</a></li>
                         <li><a href="sendmoney.html"><em class="ti ti-files"></em>Send Money</a></li>
                         <li><a href="receivemoney.html"><em class="ti ti-pie-chart"></em>Receive Money</a></li>
                         <li><a href="transactions.html"><em class="ti ti-control-shuffle"></em>Transactions History</a></li>
-                       
+                        <li><a href="tokens.html"><em class="ti ti-pie-chart"></em>Contributions</a></li>
                         <li><a href="account.html"><em class="ti ti-user"></em>Account</a></li>
                         <li><a href="security.html"><em class="ti ti-lock"></em>Security</a></li>
                     </ul><!-- .user-icon-nav -->

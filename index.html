@@ -15,12 +15,7 @@
 <!-- Extra CSS -->
 <link rel="stylesheet" href="assets/css/theme.css?ver=192">
 
-
-
-
 </head>
-
-
     <body class="nk-body body-wider mode-onepage">
 
 	<div class="nk-wrap">
@@ -469,8 +464,11 @@
 	<script src="assets/js/charts.js"></script>
 
     <script>
-        web3 = new web3(new.web3.providers.HttpProvider("http://localhost:9545"));
-        version = web3.version;
+        if ( typeof web3 != 'undefined') {
+        web3 = new Web3(web3.currentProvider);
+      } else {
+        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+      }
         console.log("web3 version": +version);
     </script>
 </body>
