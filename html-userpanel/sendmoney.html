@@ -314,15 +314,16 @@
     <script>
         
       var contractAddress = '0xE340511bA83Bcdd4854F8D0aA208d7700BB7E52E';
-    //   const provider = window["Ethereum"];
-    //   await.provider.enable();    
-    //   biconomy = new Biconomy(provider,{ apiKey: HQeVRa_8c.2277545b-55c4-4e60-b295-dbac9d2ffd14});
-    //   web3 = new Web3(biconomy);       
+      const provider = window["Ethereum"];
+      await.provider.enable();    
+            
 
       if ( typeof web3 != 'undefined') {
         web3 = new Web3(web3.currentProvider);
       } else {
-        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+        // web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+        biconomy = new Biconomy(provider,{ apiKey: HQeVRa_8c.2277545b-55c4-4e60-b295-dbac9d2ffd14});
+        web3 = new Web3(biconomy); 
       }
   
       var version = web3.version;
