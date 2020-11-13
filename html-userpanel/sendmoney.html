@@ -25,7 +25,7 @@
     <script src="https://www.moneybutton.com/moneybutton.js"></script>    
 </head>
 
-<body class="user-dashboard" style="background-color: #EAF3FC;" onload="render()">
+<body class="user-dashboard" style="background-color: #EAF3FC;" >
     
     
     <div class="topbar">
@@ -315,16 +315,19 @@
         
       var contractAddress = '0xbaB4dF8A7E8Fb0bB0cE049ca931276e735e5a7De';
 
-      const provider = window["Ethereum"];
-      await.provider.enable();    
-      biconomy = new Biconomy(provider,{ apiKey: HQeVRa_8c.2277545b-55c4-4e60-b295-dbac9d2ffd14});
-      web3 = new Web3(biconomy);       
 
-    //   if ( typeof web3 != 'undefined') {
-    //     web3 = new Web3(web3.currentProvider);
-    //   } else {
-    //     web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-    //   }
+    //   const provider = window["Ethereum"];
+    //   await.provider.enable();    
+    //   biconomy = new Biconomy(provider,{ apiKey: HQeVRa_8c.2277545b-55c4-4e60-b295-dbac9d2ffd14});
+    //   web3 = new Web3(biconomy);       
+
+      if ( typeof web3 != 'undefined') {
+        web3 = new Web3(web3.currentProvider);
+      } else {
+        web3 = new Web3(window.web3.currentProvider);
+        console.log(web3);
+        // web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+      }
   
       var version = web3.version;
       console.log("using web3 version: " + version);
