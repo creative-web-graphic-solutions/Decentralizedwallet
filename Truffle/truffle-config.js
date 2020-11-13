@@ -11,7 +11,12 @@ module.exports = {
      port: 9545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
-    
+    AvalancheTestnet: {
+      host:"127.0.0.1",
+      port:8545,
+      network_id:0xa868,
+      gas:3750000
+     }
   },
 
   // Set default mocha options here, use special reporters etc.
