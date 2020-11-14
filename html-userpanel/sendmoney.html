@@ -313,7 +313,8 @@
 
     <script>
         
-      var contractAddress = '0xE340511bA83Bcdd4854F8D0aA208d7700BB7E52E';
+      var contractAddress = '0x0917f04e3c558d466EcadE912F92cD4946133a5e';
+      
       const provider = window["Ethereum"];
     //   await.provider.enable();    
             
@@ -351,7 +352,7 @@
           return;
         }
 
-        ApprovalContract.methods.deposit(toAddress).send({from: fromAddress, gas: 100000, value: web3.utils.toWei(amount,'ether')},
+        ApprovalContract.methods.deposit(toAddress).send({from: fromAddress, gas: 2613130, value: web3.utils.toWei(amount,'ether')},
         function(error, result) {
           if (error) {
             console.log('error: ' + error);
@@ -378,7 +379,7 @@
       $('#approve-form').submit(function() {
           event.preventDefault();
 
-          ApprovalContract.methods.approve().call({from: '0x68893D8BfCa223461b54f05cC4A5D9c014F98F21', gas: 100000},
+          ApprovalContract.methods.approve().call({from: '0x52b736f715e6d4e1e60a8c0ef9ef73478559c1de', gas: 100000},
               function(error, result) {
                 if (error) {
                   console.log('error: ' + error);
