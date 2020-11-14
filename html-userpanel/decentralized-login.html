@@ -45,13 +45,192 @@
           const userMetadata = await magic.user.getMetadata();
           html = `
 
-            <h1>Current user: ${userMetadata.email}</h1>
+            <h1 style="float:right">Logged in as: ${userMetadata.email}</h1>
+            </br> </br>
+            <span style="float:right;" ><button onclick="handleLogout()">Logout</button> </span>
+             
+            <div class="topbar">
+        <div class="topbar-md d-lg-none">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="toggle-nav">
+                        <div class="toggle-icon">
+                            <span class="toggle-line"></span>
+                            <span class="toggle-line"></span>
+                            <span class="toggle-line"></span>
+                            <span class="toggle-line"></span>
+                        </div>
+                    </a><!-- .toggle-nav -->
+
+                    <div class="site-logo">
+                        <a href="index.html" class="site-brand">
+                            <img src="images/logo.jpg" alt="logo" srcset="images/logo2x.jpg 2x">
+                        </a>
+                    </div><!-- .site-logo -->
+                    
+                    <div class="dropdown topbar-action-item topbar-action-user">
+                        <a href="#" data-toggle="dropdown"> <img class="icon" src="images/user-thumb-sm.png" alt="thumb"> </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="user-dropdown">
+                                <div class="user-dropdown-head">
+                                    <h6 class="user-dropdown-name">Micheal Thomas <span>(CWGS1105)</span></h6>
+                                    <span class="user-dropdown-email">useremail@example.com</span>
+                                </div>
+                                <div class="user-dropdown-balance">
+                                    <h6> BALANCE</h6>
+                                    <h3>120,000,000 </h3>
+                                    <ul>
+                                        <li>1.240 BTC</li>
+                                        <li>19.043 ETH</li>
+                                        <li>6,500.13 USD</li>
+                                    </ul>
+                                </div>
+                                <ul class="user-dropdown-btns btn-grp guttar-10px">
+                                    <li><a href="#" class="btn btn-xs btn-warning">Confirm Email</a></li>
+                                    <li><a href="sendmoney.html" class="btn btn-xs btn-warning">Send Money</a></li>
+                                </ul>
+                                <div class="gaps-1x"></div>
+                                <ul class="user-dropdown-links">
+                                    <li><a href="account.html"><i class="ti ti-id-badge"></i>My Profile</a></li>
+                                    <li><a href="security.html"><i class="ti ti-lock"></i>Security</a></li>
+                                    <li><a href="activity.html"><i class="ti ti-eye"></i>Activity</a></li>
+                                </ul>
+                                <ul class="user-dropdown-links">
+                                    <li>
+                                                                          
+                                     const userMetadata = await magic.user.getMetadata();
+         
+                                    <button onclick="handleLogout()">Logout</button>
+         
+                      
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .toggle-action -->
+                </div><!-- .container -->
+            </div><!-- .container -->
+        </div><!-- .topbar-md -->
+        <div class="container">
+            <div class="d-lg-flex align-items-center justify-content-between">
+                <div class="topbar-lg d-none d-lg-block">
+                    <div class="site-logo">
+                        <a href="index.html" class="site-brand">
+                            <img src="images/logo.jpg" alt="logo" srcset="">
+                        </a>
+                    </div><!-- .site-logo -->
+                </div><!-- .topbar-lg -->
+
+                <div class="topbar-action d-none d-lg-block">
+                  <h1 style="float:right">Logged in as: ${userMetadata.email}</h1>
+                  </br> </br>
+                <span style="float:right;" ><button onclick="handleLogout()">Logout</button> </span>
+             
+                       
+                </div><!-- .topbar-action -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- TopBar End -->
+
+
+
+            <div class="user-wraper" style=margin-top:100px;>
+        <div class="container">
+            <div class="d-flex">
+                <div class="user-sidebar">
+                    <div class="user-sidebar-overlay"></div>
+                    <div class="user-box d-none d-lg-block">
+                        <!-- <div class="user-image">
+                            <img src="images/user-thumb-lg.png" alt="thumb">
+                        </div>
+                        <h6 class="user-name">Mike Thomas</h6>
+                        <div class="user-uid">Unique ID: <span>CWGS1105</span></div>
+                        <ul class="btn-grp guttar-10px">
+
+                            <li><a href="#" class="btn btn-xs btn-warning">Confirm Email</a></li>
+                            <li><a href="kyc.html" class="btn btn-xs btn-warning">KYC Pending</a>
+
+                            <li>
+                            /* Get user metadata including email */
+                            const userMetadata = await magic.user.getMetadata();    
+                            <h1>Current user: ${userMetadata.email}</h1>    
+                            </li>    
+                        </ul> -->
+                    </div><!-- .user-box -->
+                    
+                    <ul class="user-icon-nav">
+                        <h3> Main</h3>
+                        <li><a href="index.html"><em class="ti ti-dashboard"></em>Dashboard</a></li>
+                        <li><a href="sendmoney.html"><em class="ti ti-files"></em>Send Money</a></li>
+                        <li><a href="receivemoney.html"><em class="ti ti-pie-chart"></em>Receive Money</a></li>
+                        <li><a href="transactions.html"><em class="ti ti-control-shuffle"></em>Transactions History</a></li>
+                        <li><a href="tokens.html"><em class="ti ti-pie-chart"></em>Contributions</a></li>
+                        <li><a href="account.html"><em class="ti ti-user"></em>Account</a></li>
+                        <li><a href="security.html"><em class="ti ti-lock"></em>Security</a></li>
+                    </ul><!-- .user-icon-nav -->
+                    <div class="user-sidebar-sap"></div><!-- .user-sidebar-sap -->
+                    <ul class="user-nav">
+                        <li><a href="how-to.html">How to buy?</a></li>
+                        <li><a href="faq.html">Faqs</a></li>
+                        <li><a href="#">Whitepaper</a></li>
+                        <li>Contact Support<span>info@cryptowallet.com</span></li>
+                    </ul><!-- .user-nav -->
+                    <div class="d-lg-none">
+                        <div class="user-sidebar-sap"></div>
+                        <div class="gaps-1x"></div>
+                        <ul class="topbar-action-list">
+                            <li class="topbar-action-item topbar-action-link">
+                                <a href="#"><em class="ti ti-home"></em> Go to main site</a>
+                            </li><!-- .topbar-action-item -->
+                            <li class="dropup topbar-action-item topbar-action-language">
+                                <a href="#" data-toggle="dropdown" aria-haspopup="true"> EN <em class="ti ti-angle-up"></em> </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">FR</a></li>
+                                    <li><a href="#">JY</a></li>
+                                    <li><a href="#">CH</a></li>
+                                </ul>
+                            </li><!-- .topbar-action-item -->
+                        </ul><!-- .topbar-action-list -->
+                    </div>
+                </div><!-- .user-sidebar -->
+                
+                <div class="user-content">
+                    <div class="user-panel" >
+
+                           
+                               
+                    </div><!-- .user-panel -->
+                </div><!-- .user-content -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- UserWraper End -->
+    
+    
+    <div class="footer-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <span class="footer-copyright">Copyright 2020, <a href="#">CryptoWallet</a>.  All Rights Reserved.</span>
+                </div><!-- .col -->
+                <div class="col-md-5 text-md-right">
+                    <ul class="footer-links">
+                        <li><a href="policy.html">Privacy Policy</a></li>
+                        <li><a href="policy.html">Terms of Service</a></li>
+                    </ul>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div>
+    <!-- FooterBar End --> 
             
-            <button onclick="handleLogout()">Logout</button>
           `;
         }
+        
         document.getElementById("app").innerHTML = html;
-        window.location = "http://www.cwgscrypto.solutions/html-userpanel/index.html"
+        
       };
       
 
@@ -60,6 +239,7 @@
         e.preventDefault();
         const email = new FormData(e.target).get("email");
         if (email) {
+          // window.location = "http://www.cwgscrypto.solutions/html-userpanel/index.html";
           /* One-liner login 🤯 */
           await magic.auth.loginWithMagicLink({ email });
           render();
@@ -75,5 +255,6 @@
   </head>
   <body onload="render()">
     <div id="app">Loading...</div>
+    
   </body>
 </html>
