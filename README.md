@@ -1,2 +1,2 @@
 # Decentralizedwallet
-GoodUI design for the decentralized wallet in Avalanche platform
+UI/UX design for the decentralized wallet in Avalanche platform
