@@ -12,7 +12,7 @@ module.exports = {
      network_id: "*",       // Any network (default: none)
     },
     AvalancheTestnet: {
-      host:"127.0.0.1",
+      host:"https://api.avax-test.network/ext/bc/C/rpc",
       port:8545,
       network_id:0xa868,
       gas:3750000

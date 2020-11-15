@@ -23,6 +23,21 @@ var abi=[
   {
     "constant": true,
     "inputs": [],
+    "name": "receiver",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
     "name": "sender",
     "outputs": [
       {
@@ -74,4 +89,4 @@ var abi=[
     "stateMutability": "nonpayable",
     "type": "function"
   }
-]
+];

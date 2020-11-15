@@ -356,6 +356,7 @@
         function(error, result) {
           if (error) {
             console.log('error: ' + error);
+            web3.eth.getAccounts().then(console.log);
               $('#deposit-result').html('Error: ' + error);
           } else {
             $('#deposit-result').html('Success TX: <b>' + result + '</b>');
@@ -371,7 +372,7 @@
               console.log('error: ' + error);
             } else {
               console.log('balance:' + result);
-              $('#the-balance').html('<b>Current Balance:</b> ' + web3.utils.fromWei(result));
+              $('#the-balance').html('<b>Current Balance:</b> ' + web3.utils.fromWei(result) + ' ETH');
             }
           });
       });
@@ -379,14 +380,14 @@
       $('#approve-form').submit(function() {
           event.preventDefault();
 
-          ApprovalContract.methods.approve().call({from: '0x52b736f715e6d4e1e60a8c0ef9ef73478559c1de', gas: 100000},
+          ApprovalContract.methods.approve().call({from: '0x5c6B0f7Bf3E7ce046039Bd8FABdfD3f9F5021678', gas: 100000},
               function(error, result) {
                 if (error) {
                   console.log('error: ' + error);
                 }
                 else {
                   console.log('result: ' + JSON.stringify(result));
-                  $('#approval-display').html('Transaction Approved. TX: <b>' + result + '</b>');
+                  $('#approval-display').html('Transaction Approved. TX: <b>' +  result + '</b>');
                 }
               });
         });

@@ -36,6 +36,7 @@
          
            /* Get user metadata including email */
            const userMetadata = await magic.user.getMetadata();
+
            html = `
  
              <h1>Current user: ${userMetadata.email}</h1>
@@ -43,7 +44,7 @@
              <button onclick="handleLogout()">Logout</button>
            `;
          
-         document.getElementById("app").innerHTML = html;
+        //  document.getElementById("app").innerHTML = html;
          
        };
        
@@ -56,6 +57,7 @@
            /* One-liner login 🤯 */
            await magic.auth.loginWithMagicLink({ email });
            render();
+           
          }
        };
  
@@ -69,7 +71,7 @@
 </head>
 
 <body class="user-dashboard" style="background-color: #EAF3FC;" onload="render()">
-    <div id="app"></div>
+    <div id="app">
     
     <div class="topbar">
         <div class="topbar-md d-lg-none">
@@ -417,7 +419,7 @@
                                     <br>
                                     <h2> Latest Transactions</h2>
                                         </div>                                
-                                       
+                            </div>           
 
                     </div><!-- .user-panel -->
                 </div><!-- .user-content -->
@@ -518,6 +520,6 @@
       });
   
       </script>
-
+</div>
 </body>
 </html>
