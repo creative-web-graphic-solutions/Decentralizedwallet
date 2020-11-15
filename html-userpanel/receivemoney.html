@@ -49,7 +49,7 @@
                         <a href="#" data-toggle="dropdown"> <img class="icon" src="images/user-thumb-sm.png" alt="thumb"> </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="user-dropdown">
-                                <div class="user-dropdown-head">
+                                <!-- <div class="user-dropdown-head">
                                     <h6 class="user-dropdown-name">Micheal Thomas <span>(CWGS1105)</span></h6>
                                     <span class="user-dropdown-email">useremail@example.com</span>
                                 </div>
@@ -61,7 +61,7 @@
                                         <li>19.043 ETH</li>
                                         <li>6,500.13 USD</li>
                                     </ul>
-                                </div>
+                                </div> -->
                                 <ul class="user-dropdown-btns btn-grp guttar-10px">
                                     <li><a href="#" class="btn btn-xs btn-warning">Confirm Email</a></li>
                                     <li><a href="sendmoney.html" class="btn btn-xs btn-warning">Send Money</a></li>
@@ -112,10 +112,10 @@
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="user-dropdown">
                                     <div class="user-dropdown-head">
-                                        <h6 class="user-dropdown-name">Mike Thomas <span>(CWGS1105)</span></h6>
-                                        <span class="user-dropdown-email">useremail@example.com</span>
+                                        <!-- <h6 class="user-dropdown-name">Mike Thomas <span>(CWGS1105)</span></h6> -->
+                                        <!-- <span class="user-dropdown-email">useremail@example.com</span> -->
                                     </div>
-                                    <div class="user-dropdown-balance">
+                                    <!-- <div class="user-dropdown-balance">
                                         <h6> BALANCE</h6>
                                         <h3>123,400,000 </h3>
                                         <ul>
@@ -123,7 +123,7 @@
                                             <li>12.013 ETH</li>
                                             <li>2,700.13 USD</li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                     <ul class="user-dropdown-links">
                                         <li><a href="account.html"><i class="ti ti-id-badge"></i>My Profile</a></li>
                                         <li><a href="security.html"><i class="ti ti-lock"></i>Security</a></li>
@@ -223,7 +223,7 @@
                                     <h3>Total Balance:</h3>
                                     <form id="get-balance-form">
                                     <button type="submit" class="btn btn-primary">Get Balance</button>
-                                    
+                                    <div id="the-balance">Click Button to get the current balance.</div>
                                     </form>
                                   </div>
                                   <div class="col-md-2"></div>
@@ -232,7 +232,7 @@
                                     <h3>MoneyReceived</h3>
                                     <form id="get-balance-form">
                                     <button type="submit" class="btn btn-primary">Money Received</button>
-                                    
+                                    <!-- <div id="the-received">Click Button to get the current balance.</div> -->
                                     </form>                                            
                                 </div>
                             </div>
@@ -296,11 +296,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 
     <script>
-      var contractAddress = '0xbaB4dF8A7E8Fb0bB0cE049ca931276e735e5a7De';
+          var contractAddress = '0x0917f04e3c558d466EcadE912F92cD4946133a5e';
+      
+      const provider = window["Ethereum"];
+    //   await.provider.enable();    
+            
+
       if ( typeof web3 != 'undefined') {
         web3 = new Web3(web3.currentProvider);
       } else {
-        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+        web3 = new Web3(new Web3.providers.HttpProvider("https://api.avax-test.network/ext/bc/C/rpc"));
+        // biconomy = new Biconomy(provider,{apiKey: HQeVRa_8c.2277545b-55c4-4e60-b295-dbac9d2ffd14});
+        // web3 = new Web3(biconomy); 
       }
   
       var version = web3.version;
@@ -310,35 +317,7 @@
        
       console.log(ApprovalContract);
   
-      $('#contract-form').submit(function() {
-        event.preventDefault();
-        var fromAddress = $('#fromAddress').val();
-        var toAddress = $('#toAddress').val();
-        var amount = $('#amount').val();
-        if (web3.utils.isAddress(fromAddress) != true) {
-          alert('You did not enter a correct ethereum address for the sender.');
-          return;
-        }
-        if (web3.utils.isAddress(toAddress) != true) {
-          alert('You did not enter a correct ethereum address for the recipient');
-          return;
-        }
-        if (amount == 0) {
-          alert('You must send more than 0 ETH');
-          return;
-        }
-
-        ApprovalContract.methods.deposit(toAddress).send({from: fromAddress, gas: 100000, value: web3.utils.toWei(amount,'ether')},
-        function(error, result) {
-          if (error) {
-            console.log('error: ' + error);
-              $('#deposit-result').html('Error: ' + error);
-          } else {
-            $('#deposit-result').html('Success TX: <b>' + result + '</b>');
-          }
-        })
-    });
-    
+      
       $('#get-balance-form').submit(function() {
         event.preventDefault();  
         web3.eth.getBalance(contractAddress,
@@ -347,7 +326,7 @@
               console.log('error: ' + error);
             } else {
               console.log('balance:' + result);
-              $('#the-balance').html('<b>Current Balance:</b> ' + web3.utils.fromWei(result));
+              $('#the-balance').html('<b>Current Balance:</b> ' + web3.utils.fromWei(result) + ' ETH');
             }
           });
       });
